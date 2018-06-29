@@ -130,6 +130,16 @@
           <div class="block-title searchbar-found">Components</div>
           <div class="list components-list searchbar-found">
             <ul>
+                      <li>
+                <a class="item-content item-link" href="/reset-pasword/">
+                  <div class="item-media"><i class="icon icon-f7"></i></div>
+                  <div class="item-inner">
+                    <div class="item-title">reset-pasword</div>
+                  </div>
+                </a>
+              </li>
+              <li>
+      
               <li>
                 <a class="item-content item-link" href="/accordion/">
                   <div class="item-media"><i class="icon icon-f7"></i></div>
@@ -601,8 +611,129 @@
       </div>
     </div>
   </div>
+  <div class="login-screen">
+  <!-- Default view-page layout -->
+  <div class="view">
+    <div class="page">
+      <!-- page-content has additional login-screen content -->
+      <div class="page-content login-screen-content">
+        <div class="login-screen-title">Welcome to Cloudbric</div>
+        <!-- Login form -->
+        <form>
+          <div class="list">
+            <ul>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Email Address</div>
+                  <div class="item-input-wrap">
+                    <input type="text" name="username" placeholder="Email Address">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+              <li class="item-content item-input">
+                <div class="item-inner">
+                  <div class="item-title item-label">Password</div>
+                  <div class="item-input-wrap">
+                    <input type="password" name="password" placeholder="Password">
+                    <span class="input-clear-button"></span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="list">
+            <ul>
+              <li>
+                <div class="block">
+                 <span class="col button button-fill">Login In</span>
+                
+              </div>
+              </li>
+            </ul>
+            <div class="block-footer">Create Account</div>
+            <div class="block-footer"><a onclick="reset_password();">Forget your password?</a></div>
+                <div class="block">
+                 <span class="col button button-fill">facebook</span>
+                
+              </div>
+                  <div class="block">
+                 <span class="col button button-fill">google</span>
+                
+              </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+ <div class="popup reset_password">
+    <div class="block">
+      <p>About</p>
+      <!-- Close Popup -->
+      <p><a class="link popup-close" href="#">Close popup</a></p>
+      <p>Don't worry. it happens!</p>
+      <p>Please enter your email address to</p>
+      <p>request a password reset</p>
+    </div>
+  </div>
+  <div class="popup popup-services">
+    <div class="block">
+      <p>Services</p>
+      <!-- Close Popup -->
+      <p><a class="link popup-close" href="#">Close popup</a></p>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+  </div>
   <script src="js/framework7.min.js"></script>
   <script src="js/routes.js"></script>
   <script src="js/app.js"></script>
+  <script>
+    var $$ = Dom7;
+   
+  app.views.create('.view-1', {
+  routes: [
+    {
+      path: '/users/',
+      url: './pages/users.html',
+    },
+    {
+      path: '/user/',
+      url: './pages/user.html',
+    },
+  ],
+});
+    
+    //app.loginScreen.open(".login-screen")
+    function reset_password() {
+      //app.loginScreen.close(".login-screen");
+     // dynamicPopup.open();
+     app.popup.open(".reset_password");
+    }
+    var dynamicPopup = app.popup.create({
+  content: '<div class="popup">'+
+              '<div class="block">'+
+                '<p>Popup created dynamically.</p>'+
+                '<p><a href="#" class="link popup-close">Close me</a></p>'+
+              '</div>'+
+            '</div>',
+  // Events
+  on: {
+    open: function (popup) {
+      console.log('Popup open');
+    },
+    opened: function (popup) {
+      console.log('Popup opened');
+    },
+  }
+});
+// Events also can be assigned on instance later
+dynamicPopup.on('close', function (popup) {
+  console.log('Popup close');
+});
+dynamicPopup.on('closed', function (popup) {
+  console.log('Popup closed');
+});
+  </script>
 </body>
 </html>

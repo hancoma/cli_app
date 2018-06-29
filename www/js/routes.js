@@ -63,6 +63,10 @@ var routes = [
 
   // Components
   {
+    path: '/reset_password/',
+    url: './pages/accordion.html',
+  },
+  {
     path: '/accordion/',
     url: './pages/accordion.html',
   },
